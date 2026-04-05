@@ -1,0 +1,31 @@
+name: Draw Keymap
+on:
+  workflow_dispatch: # allows manual run
+  push:
+    paths:
+      - "config/*.keymap"
+      - "config/*.conf"
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Install and Draw
+        uses: caksoylar/keymap-drawer@main
+        with:
+          keymap_lines: 10 # Adjust based on your Corne (6-column is usually 10)
+          config_path: "config/corne.keymap"
+          output_path: "keymap-drawer/corne.svg"
+          install_args: "keymap-drawer" # Installs the tool via pip
+          draw_args: "corne:'-c 10 -s'" # Tells it you have a 10-column Corne
+
+      - name: Commit updated images
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Augment: Update keymap drawer images"
+          file_pattern: "keymap-drawer/*.svg"
