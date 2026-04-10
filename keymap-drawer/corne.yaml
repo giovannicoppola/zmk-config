@@ -28,11 +28,11 @@ layers:
   - +
   - {t: ▽, type: trans}
   - LSHFT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - RGB EFF
+  - RGB EFR
+  - RGB TOG
+  - RGB BRI
+  - RGB BRD
   - {t: ▽, type: trans}
   - '1'
   - '2'
