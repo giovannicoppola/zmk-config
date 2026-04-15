@@ -33,7 +33,7 @@ layers:
   - RGB TOG
   - RGB BRI
   - RGB BRD
-  - {t: ▽, type: trans}
+  - EP TOG
   - '1'
   - '2'
   - '3'
